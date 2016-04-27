@@ -6,12 +6,12 @@ LABEL description="Heka built image for integrating custom plugins."
 WORKDIR /
 RUN apt-get update && apt-get install -y \
 	cmake \
+	debhelper \
+	fakeroot \
+	gcc \
 	git \
 	make \
-	gcc \
 	patch \
-	fakeroot \
-	debhelper \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
 
 	&& git clone https://github.com/mozilla-services/heka 
